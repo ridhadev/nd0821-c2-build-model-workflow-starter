@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Performs basic cleaning on the data and save the results in Weights & Biases
+Download from W&B the raw dataset and apply some basic data cleaning, exporting the result to a new artifact
 """
 import argparse
 import logging
@@ -27,46 +27,46 @@ def go(args):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="This step cleans the data")
+    parser = argparse.ArgumentParser(description="A very basic data cleaning")
 
 
     parser.add_argument(
-        "--parameters [parameter1", 
+        "--input_artifact", 
         type=## INSERT TYPE HERE: str, float or int,
         help=## INSERT DESCRIPTION HERE,
         required=True
     )
 
     parser.add_argument(
-        "--parameter2]: parameter1", 
+        "--output_artifact", 
         type=## INSERT TYPE HERE: str, float or int,
         help=## INSERT DESCRIPTION HERE,
         required=True
     )
 
     parser.add_argument(
-        "--parameter2", 
+        "--output_type", 
         type=## INSERT TYPE HERE: str, float or int,
         help=## INSERT DESCRIPTION HERE,
         required=True
     )
 
     parser.add_argument(
-        "--parameter3parameter1", 
+        "--output_description", 
         type=## INSERT TYPE HERE: str, float or int,
         help=## INSERT DESCRIPTION HERE,
         required=True
     )
 
     parser.add_argument(
-        "--parameter2", 
+        "--min_price", 
         type=## INSERT TYPE HERE: str, float or int,
         help=## INSERT DESCRIPTION HERE,
         required=True
     )
 
     parser.add_argument(
-        "--parameter3", 
+        "--max_price", 
         type=## INSERT TYPE HERE: str, float or int,
         help=## INSERT DESCRIPTION HERE,
         required=True

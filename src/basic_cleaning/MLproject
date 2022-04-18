@@ -5,30 +5,30 @@ entry_points:
   main:
     parameters:
 
-      parameters [parameter1:
+      input_artifact:
         description: ## ADD DESCRIPTION
         type: string
 
-      parameter2]: parameter1:
+      output_artifact:
         description: ## ADD DESCRIPTION
         type: string
 
-      parameter2:
+      output_type:
         description: ## ADD DESCRIPTION
         type: string
 
-      parameter3parameter1:
+      output_description:
         description: ## ADD DESCRIPTION
         type: string
 
-      parameter2:
+      min_price:
         description: ## ADD DESCRIPTION
         type: string
 
-      parameter3:
+      max_price:
         description: ## ADD DESCRIPTION
         type: string
 
 
     command: >-
-        python run.py  --parameters [parameter1 {parameters [parameter1}  --parameter2]: parameter1 {parameter2]: parameter1}  --parameter2 {parameter2}  --parameter3parameter1 {parameter3parameter1}  --parameter2 {parameter2}  --parameter3 {parameter3} 
+        python run.py  --input_artifact {input_artifact}  --output_artifact {output_artifact}  --output_type {output_type}  --output_description {output_description}  --min_price {min_price}  --max_price {max_price} 
