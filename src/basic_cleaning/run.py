@@ -36,6 +36,10 @@ def go(args):
     logger.info("Convert last_review to datetime...")
     df['last_review'] = pd.to_datetime(df['last_review'])
 
+    logger.info(f"Remove bad geolocation coordinates")
+    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    df = df[idx].copy()
+
     logger.info(f"Logging artifact {args.output_artifact}")
     artifact = wandb.Artifact(
         args.output_artifact,
@@ -44,9 +48,7 @@ def go(args):
     )
 
     tmp_file = "clean_sample.csv"
-
     df.to_csv(tmp_file, index=False)
-
     artifact.add_file(tmp_file)
 
     run.log_artifact(artifact)
